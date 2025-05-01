@@ -1,0 +1,3 @@
+INTERFACE zif_fg_feature
+  PUBLIC.
+ENDINTERFACE.
