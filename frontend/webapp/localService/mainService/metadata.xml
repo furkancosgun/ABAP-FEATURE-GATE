@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZFG_FEATURE_SRV" xml:lang="tr" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <EntityType Name="ShUser" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Bname"/>
+                </Key>
+                <Property Name="Bname" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="McNamelas" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="McNamefir" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Department" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Building" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Roomnumber" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="TelExtens" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Kostl" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="InhouseMl" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Company" Type="Edm.String" Nullable="false" MaxLength="42" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="McName1" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="McCity1" Type="Edm.String" Nullable="false" MaxLength="25" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Idadtype" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="Feature" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Featureid"/>
+                </Key>
+                <Property Name="Featureid" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="ObjectTypeName" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Featuretext" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Featuredescription" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Feature Description" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Featureisactive" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Feature Is Active?" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Featureactivationtype" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Feature Act. Type" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="FeatureCondition" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Featureid"/>
+                    <PropertyRef Name="Conditionid"/>
+                </Key>
+                <Property Name="Featureid" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Feature ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Conditionid" Type="Edm.String" Nullable="false" MaxLength="6" sap:unicode="false" sap:label="Condition Id" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Fieldname" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:label="Fieldname" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sign" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Sign" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Opt" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Option" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Low" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="Low" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="High" Type="Edm.String" Nullable="false" MaxLength="255" sap:unicode="false" sap:label="High" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ShLanguage" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Spras"/>
+                </Key>
+                <Property Name="Spras" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Sptxt" Type="Edm.String" Nullable="false" MaxLength="16" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ShParameter" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="Paramid"/>
+                </Key>
+                <Property Name="Paramid" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Partext" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="ShRole" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="AgrName"/>
+                </Key>
+                <Property Name="AgrName" Type="Edm.String" Nullable="false" MaxLength="30" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="Text" Type="Edm.String" Nullable="false" MaxLength="80" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityContainer Name="ZFG_FEATURE_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="ShUserSet" EntityType="ZFG_FEATURE_SRV.ShUser" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="FeatureSet" EntityType="ZFG_FEATURE_SRV.Feature" sap:creatable="false" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="FeatureConditionSet" EntityType="ZFG_FEATURE_SRV.FeatureCondition" sap:searchable="true" sap:content-version="1"/>
+                <EntitySet Name="ShLanguageSet" EntityType="ZFG_FEATURE_SRV.ShLanguage" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ShParameterSet" EntityType="ZFG_FEATURE_SRV.ShParameter" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="ShRoleSet" EntityType="ZFG_FEATURE_SRV.ShRole" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+            </EntityContainer>
+            <atom:link rel="self" href="http://10.101.11.150:50000/sap/opu/odata/sap/ZFG_FEATURE_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://10.101.11.150:50000/sap/opu/odata/sap/ZFG_FEATURE_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,116 @@
+<mvc:View
+    xmlns:core="sap.ui.core"
+    xmlns:smartfilterbar="sap.ui.comp.smartfilterbar"
+    xmlns:smarttable="sap.ui.comp.smarttable"
+    controllerName="com.furkancosgun.zfeaturegate.controller.List"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <Page
+        id="_IDGenPage"
+        title="{i18n>title}"
+    >
+        <content>
+            <smartfilterbar:SmartFilterBar
+                id="_IDGenSmartFilterBar1"
+                entitySet="FeatureSet"
+                advancedMode="true"
+            />
+
+            <smarttable:SmartTable
+                id="_IDGenSmartTable"
+                entitySet="FeatureSet"
+                tableType="ResponsiveTable"
+                header="{i18n>ListView.FeatureList}"
+                smartFilterId="_IDGenSmartFilterBar1"
+                enableAutoBinding="true"
+                initiallyVisibleFields="FeatureId,FeatureText,IsActive,CreatedAt,CreatedBy,ChangedAt,ChangedBy"
+                demandPopin="true"
+                persistencyKey="SmartTable_Explored"
+            >
+                <Table id="_IDGenTable">
+                    <columns>
+                        <Column id="_IDGenColumn">
+                            <customData>
+                                <core:CustomData
+                                    key="p13nData"
+                                    value='{
+                                        "columnKey": "IsActive", 
+                                        "leadingProperty": "IsActive", 
+                                        "sortProperty": "IsActive", 
+                                        "filterProperty": "IsActive", 
+                                        "columnIndex": 2
+                                    }'
+                                />
+                            </customData>
+                            <Text
+                                id="_IDGenText"
+                                text="{/#FeatureSet/IsActive/@sap:label}"
+                            />
+                        </Column>
+                        <Column id="_IDGenColumn1">
+                            <customData>
+                                <core:CustomData
+                                    key="p13nData"
+                                    value='{
+                                        "columnKey": "CreatedAt", 
+                                        "leadingProperty": "CreatedAt", 
+                                        "sortProperty": "CreatedAt", 
+                                        "filterProperty": "CreatedAt", 
+                                        "columnIndex": 4
+                                    }'
+                                />
+                            </customData>
+                            <Text
+                                id="_IDGenText1"
+                                text="{/#FeatureSet/CreatedAt/@sap:label}"
+                            />
+                        </Column>
+                        <Column id="_IDGenColumn2">
+                            <customData>
+                                <core:CustomData
+                                    key="p13nData"
+                                    value='{
+                                        "columnKey": "ChangedAt", 
+                                        "leadingProperty": "ChangedAt", 
+                                        "sortProperty": "ChangedAt", 
+                                        "filterProperty": "ChangedAt", 
+                                        "columnIndex": 6
+                                    }'
+                                />
+                            </customData>
+                            <Text
+                                id="_IDGenText2"
+                                text="{/#FeatureSet/ChangedAt/@sap:label}"
+                            />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem id="_IDGenColumnListItem">
+                            <Switch
+                                id="_IDGenSwitch"
+                                state="{IsActive}"
+                                change="onSwitchChange"
+                            />
+                            <Text
+                                id="_IDGenText3"
+                                text="{
+                                    path:'CreatedAt',
+                                    type:'sap.ui.model.type.Date'
+                                }"
+                            />
+                            <Text
+                                id="_IDGenText4"
+                                text="{
+                                    path:'ChangedAt',
+                                    type:'sap.ui.model.type.Date'
+                                }"
+                            />
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </smarttable:SmartTable>
+        </content>
+    </Page>
+</mvc:View>
